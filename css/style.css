@@ -1,0 +1,493 @@
+/* ==========================================================================
+    TABLE OF CONTENTS
+
+    00. FONT REPLACEMENT
+    01. GLOBAL SELECTORS
+    02. FONT ICONS
+    03. HEADER
+    04. BANNER
+
+   ========================================================================== */
+
+/* ==========================================================================
+   00. FONT REPLACEMENT
+   ========================================================================== */
+@import 'https://fonts.googleapis.com/css?family=Raleway:400, 500, 700';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+
+
+/* ==========================================================================
+   01. GLOBAL SELECTORS
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+}
+
+*:after {
+  clear: both;
+  display: block;
+  content: "";
+}
+
+body {
+  font: 400 13px/26px 'Open Sans', sans-serif;
+  color: #505050;
+  background: #000 url(../images/bg-img-1.jpg) no-repeat 0 0/cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 84);
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+p {
+  font: 400 13px/26px 'Open Sans', sans-serif;
+  color: #505050;
+}
+
+a {
+  line-height: 1;
+  color: #505050;
+  -webkit-transition: all .5s linear;
+  -moz-transition: all .5s linear;
+  -ms-transition: all .5s linear;
+  -o-transition: all .5s linear;
+  transition: all .5s linear;
+  font-family: 'Raleway'
+}
+
+a:hover {
+  text-decoration: none;
+  color: #F5A623;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+textarea {
+  -webkit-transition: all .5s linear;
+  -moz-transition: all .5s linear;
+  -ms-transition: all .5s linear;
+  -o-transition: all .5s linear;
+  transition: all .5s linear;
+  width: 100%;
+  padding: 5px 10px;
+}
+
+textarea {
+  resize: none;
+  height: 75px;
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='password']:focus,
+textarea:focus {
+  box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+  outline: none;
+}
+
+/* ==========================================================================
+   02. FONT ICONS
+   ========================================================================== */
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot?xf2skb');
+  src: url('../fonts/icomoon.eot?xf2skb#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?xf2skb') format('truetype'), url('../fonts/icomoon.woff?xf2skb') format('woff'), url('../fonts/icomoon.svg?xf2skb#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-windy:before {
+  content: "\e917";
+}
+
+.icon-snowy:before {
+  content: "\e905";
+}
+
+.icon-rainy:before {
+  content: "\e906";
+}
+
+.icon-lightning:before {
+  content: "\e907";
+}
+
+.icon-cloud:before {
+  content: "\e908";
+}
+
+.icon-cloudy:before {
+  content: "\e909";
+}
+
+.icon-moon:before {
+  content: "\e90a";
+}
+
+.icon-sun:before {
+  content: "\e90b";
+}
+
+.icon-rainy2:before {
+  content: "\e90c";
+}
+
+.icon-lightning2:before {
+  content: "\e90d";
+}
+
+.icon-cloud2:before {
+  content: "\e90e";
+}
+
+.icon-cloudy2:before {
+  content: "\e90f";
+}
+
+.icon-moon2:before {
+  content: "\e910";
+}
+
+.icon-sun2:before {
+  content: "\e911";
+}
+
+.icon-cloud-wind:before {
+  content: "\e913";
+}
+
+.icon-cloud-wind2:before {
+  content: "\e915";
+}
+
+.icon-wind:before {
+  content: "\e916";
+}
+
+.icon-crescent:before {
+  content: "\e914";
+}
+
+.icon-thermometer-quarter:before {
+  content: "\e912";
+}
+
+.icon-cloud-moon-raindrops:before {
+  content: "\e900";
+}
+
+.icon-cloud-sun-raindrops:before {
+  content: "\e901";
+}
+
+.icon-cloud-moon:before {
+  content: "\e902";
+}
+
+.icon-cloud-lightning:before {
+  content: "\e903";
+}
+
+.icon-cloud-sun:before {
+  content: "\e904";
+}
+
+/* ==========================================================================
+ 03. HEADER
+ ========================================================================== */
+header {
+  width: 100%;
+  padding: 20px 0;
+  position: relative;
+  z-index: 9;
+  background: rgba(0, 0, 0, .1);
+  /*margin-bottom: 30px;*/
+}
+
+.logo h1 {
+  font-size: 24px;
+}
+
+.logo a {
+  display: block;
+  color: #FFF
+}
+
+nav {
+  float: right;
+}
+
+.navbar-default {
+  background: none;
+  border: none;
+  border-radius: 0;
+  min-height: inherit;
+  margin-bottom: 0;
+  padding: 0;
+  width: 120px;
+}
+
+.navbar-header {
+  float: right;
+}
+
+.navbar-toggle {
+  margin: 0 0 0 20px;
+  padding: 0;
+  border: none;
+}
+
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+  background: none;
+  color: #000;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #FFF;
+}
+
+/*.sticky .offcanvas-toggle .icon-bar {
+background-color: rgba(0, 0, 0, 54);
+}*/
+.navbar-right {
+  margin: 0;
+}
+
+.navbar-nav>li {
+  margin-left: 20px;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: #FFF
+}
+
+.navbar-default .navbar-nav>li>a {
+  line-height: 1;
+  padding: 0;
+  color: #FFF;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.navbar-offcanvas.offcanvas-transform.in li {
+  float: inherit;
+  display: block;
+  margin: 0;
+}
+
+.navbar-offcanvas.offcanvas-transform.in li a {
+  color: rgba(0, 0, 0, .87);
+  padding: 10px 0
+}
+
+.weather-forecast {
+  padding:30px 0;
+  color: #FFF;
+}
+
+.update ul {
+  margin: 0 0 30px;
+}
+
+.update span {
+  font-size: 30px;
+}
+
+.update span strong {
+  text-transform: uppercase;
+}
+
+.update span strong.warmer {
+  color: #FFA000
+}
+
+.update span strong.cool {
+  color: #1976D2
+}
+
+.update span strong.hot {
+  color: #FF5252
+}
+
+.update span strong:after, .forecast-detail strong:after{
+  content: inherit;
+  display: inline-block;
+}
+
+.update li {
+  float: left;
+}
+
+.update li::after {
+  content: "|";
+  display: inline;
+  margin: 0 15px;
+}
+
+.update li:last-child:after {
+  content: '';
+}
+
+.status {
+  margin: 10px 0;
+}
+
+.status ul {
+  background: rgba(43, 19, 36, 0.36) none repeat scroll 0 0;
+
+  border-radius: 10px;
+  line-height: 1;
+  min-height: 100px;
+  padding: 30px 0;
+}
+
+.status li {
+  font-size: 17px;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 30px
+}
+
+.status li:last-child {
+  margin-bottom: 0;
+}
+
+.status li i {
+  font-size: 40px;
+}
+
+.status span {
+  font-size: 17px;
+}
+.status li strong{
+  color: rgba(255,235,59,.75);
+}
+.forecast-detail li strong:after {
+  content: inherit;
+}
+
+.forecast-detail li span {
+  display: inline-block;
+  width: 150px;
+}
+.form-wrapper{
+  margin-bottom: 30px;
+}
+.input-wrapper{
+  background: #FFF;
+  border-radius: 4px;
+}
+.input-wrapper input[type="text"]{
+  background: none;
+  border:none;
+  float: left;
+  width: 60%;
+  color: #000;
+  padding: 9px 10px;
+}
+.input-wrapper input[type="text"]:focus {
+  box-shadow: none;
+}
+.input-wrapper input[type="submit"]{
+  float: right;
+  border:none;
+  background:  #2f5b80 none repeat scroll 0 0;
+  text-transform: uppercase;
+  padding:10px 20px;
+  border-radius: 0 4px 4px 0;
+  border:1px solid #FFF;
+}
+
+.preloader {
+    background: #fff url("../images/icon_loading2.gif") no-repeat scroll center center;
+    height: 100%;
+    left: 0;
+    opacity: 0.5;
+    overflow: hidden;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+img.weather-icon {
+  display: block;
+  height: 50px;
+  margin: 0 auto;
+  margin-bottom:10px;
+}
+
+@media (min-width:768px) {
+  .navbar-default {
+    width: auto;
+    padding: 5px 0;
+  }
+
+  .navbar-default .navbar-nav>li>a {
+    color: #FFF;
+  }
+
+  .status li {
+    float: left;
+    width: 33.33%;
+    margin-bottom: 0;
+    text-transform: capitalize;
+  }
+
+}

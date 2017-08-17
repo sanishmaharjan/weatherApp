@@ -1,0 +1,81 @@
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-8">
+                <!-- logo -->
+                <div class="logo">
+                    <h1><a href="index.html" title="Weather App">Weather App</a></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="weather-forecast">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-wrapper">
+                        <form name="searchForm" id="searchForm" data-ng-submit="searchCityWeather()">
+                            <div class="input-wrapper">
+                                <input type="text" name="city" data-ng-model="searchFormData.city" placeholder="Search"
+                                       required>
+                                <input type="submit" value="Search">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="forecast">
+                <div class="status col-md-6 col-sm-6 col-xs-12">
+                    <ul>
+                        <li><img class="weather-icon"
+                                 src="http://openweathermap.org/img/w/{{weatherData.weather[0].icon}}.png"/>{{weatherData.weather[0].description}}
+                        </li>
+                        <li><i class="icon-thermometer-quarter"></i>{{weatherData.main.temp}}&deg; F</li>
+                        <li>
+                            <i class="icon-wind"></i><span>wind from <strong>{{findWindDriection(weatherData.wind.deg)}}</strong></span>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><i class="icon-sun2"></i>{{getHourFromTimestamp(weatherData.sys.sunrise)}}am</li>
+                        <li><i class="icon-cloudy2"></i>{{getHourFromTimestamp(weatherData.sys.sunrise)}}pm</li>
+                        <li><i class="icon-crescent"></i>{{weatherData.main.humidity}}% humidity</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="update">
+                        <span>Today forecast</span>
+                        <ul>
+                            <li>Temperture High {{weatherData.main.temp_max}}&deg;, Low
+                                {{weatherData.main.temp_min}}&deg;</li>
+                            <li>Updated {{getUpdateTime(weatherData.dt)}} ago</li>
+                        </ul>
+                    </div>
+                    <div class="forecast-detail">
+                        <ul>
+                            <li><span>Pressure</span><strong>{{weatherData.main.pressure}}</strong> in</li>
+                            <li ng-repeat="(key, value) in weatherData.clouds">
+                                <span>Clouds</span><strong>{{weatherData.weather[0].description}} {{value}}</strong> %
+                            </li>
+                            </li>
+                            <li><span>Humidity</span><strong>{{weatherData.main.humidity}}</strong> %</li>
+                            </li>
+                            <li ng-repeat="(key, value) in weatherData.rain">
+                                <span>Rainfall</span><strong>{{value}}</strong> in
+                            </li>
+                            </li>
+                            <li ng-repeat="(key, value) in weatherData.snow">
+                                <span>Snow Depth</span><em>{{value}}</em> in
+                            </li>
+                            </li>
+                            <li><span>Wind Speed</span><strong>{{weatherData.wind.speed}}</strong> m/s</li>
+                            <li><span>Wind Degree</span><strong>{{weatherData.wind.deg}}</strong>&deg;</li>
+                            <li><span>Pressure</span><strong>{{weatherData.main.pressure}}</strong> in</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
